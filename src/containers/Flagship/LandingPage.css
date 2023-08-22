@@ -1,0 +1,56 @@
+body{
+    background:#DFE3EE;
+}
+
+.brand-logo{
+    height: 460px;
+    border-radius: 10px;
+}
+
+.Main-section{
+    background: lavenderblush;
+    height: 472px;
+}
+.pt-5{
+    padding-top: 6.5rem !important;
+}
+
+.brand-name{
+    color:crimson !important;
+    font-size: 50px;
+}
+
+.accordion-item{
+    background-color: bisque;
+}
+
+.accordion-button{
+    color:darkcyan;
+}
+
+.text-underline{
+  text-decoration: none;
+}
+
+.loginbox{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 4px 1px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 4px;
+    width: 60%;
+    height: 14.7rem;
+    background: white;
+}
+
+.input-field{
+    width: 303px;
+    height: 45px;
+}
+
+.btn-primary{
+    width: 303px;
+    display: inherit;
+    
+}
+
+.login-btn{
+    width:302px !important;
+}

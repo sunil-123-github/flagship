@@ -1,0 +1,68 @@
+.btn-group-width{
+    width: 111px;
+    font-size: 13px;
+}
+
+
+#organization-name{
+    width: 270px !important;
+    height: 45px !important;
+}
+
+.bi-check-circle-fill {
+    color: blue !important;
+}
+
+.bi-flower1{
+    color:crimson;
+}
+
+.label-margin{
+    margin-right:15px !important;
+    
+}
+
+.quotation-heading{
+    color: darkblue;
+}
+
+.customer-name{
+  color:#4831D4!important;
+  background-color: #CCF381 !important;
+}
+
+.delivery-date{
+ color:#243665 !important ;
+ background-color: #8BD8BD !important;
+}
+
+.compony-name{
+ background-color:#F0A07C !important;
+ color: #4A274F!important;
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+.GST_total{
+  margin-left: 34rem;
+}

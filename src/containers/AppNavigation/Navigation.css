@@ -1,0 +1,78 @@
+.navbar{
+    box-shadow: 0px 1px 10px #999;
+}
+
+.nav-item{
+    margin-right: 14px;
+}
+
+.nav-link{
+  color:#1778F2 !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar-brand{
+    color:#1778F2 !important;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.brand-name{
+    margin-top: 4rem;
+    margin-left: 1rem;
+    color: #1778F2;
+}
+
+.brand-vision{
+    margin-left: 1rem;
+    color:indigo;
+}
+
+.container{
+    margin-top:5px;
+    position: relative;
+    height: 560px;
+} 
+
+.bi-grid-3x3-gap-fill{
+  color:#1778F2;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  left: -217px;
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  background-color:rgb(168, 166, 166);
+  border-radius: 5px;
+  min-width: 246px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;   border-radius: 5px;}
+
+.dropdown:hover .dropdown-content {display: block;   border-radius: 5px;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
