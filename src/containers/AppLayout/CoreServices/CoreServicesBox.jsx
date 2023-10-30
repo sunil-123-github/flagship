@@ -87,54 +87,54 @@ export const CoreServicesBox = () => {
     <div>
       <div className="row">
         <div className="col-3">
-          <button type="button" class="btn btn-info btn-radius inherit m-2" onClick={handleButton1Click}>
+          <button type="button" className="btn btn-info btn-radius inherit m-2" onClick={handleButton1Click}>
             <div>
-              <i class="bi bi-cc-square-fill"></i> <b>Desiging</b>
+              <i className="bi bi-cc-square-fill"></i> <b>Desiging</b>
             </div>
 
           </button>
-          <button type="button" class="btn btn-secondary btn-radius inherit m-2" onClick={handleButton2Click}>
+          <button type="button" className="btn btn-secondary btn-radius inherit m-2" onClick={handleButton2Click}>
 
             <div>
-              <i class="bi bi-fan"></i> <b>Production</b>
+              <i className="bi bi-fan"></i> <b>Production</b>
             </div>
 
           </button>
-          <button type="button" class="btn btn-success btn-radius inherit m-2" onClick={handleButton3Click}>
+          <button type="button" className="btn btn-success btn-radius inherit m-2" onClick={handleButton3Click}>
             <div>
-              <i class="bi bi-cc-square-fill"></i> <b>Installing</b>
+              <i className="bi bi-cc-square-fill"></i> <b>Installing</b>
             </div>
 
           </button>
-          <button type="button" class="btn btn-danger btn-radius inherit m-2" onClick={handleButton4Click}>
+          <button type="button" className="btn btn-danger btn-radius inherit m-2" onClick={handleButton4Click}>
 
             <div>
-              <i class="bi bi-fan"></i> <b>Maintenace</b>
+              <i className="bi bi-fan"></i> <b>Maintenace</b>
             </div>
 
-          </button>  <button type="button" class="btn btn-radius btn-warning inherit m-2" onClick={handleButton5Click}>
+          </button>  <button type="button" className="btn btn-radius btn-warning inherit m-2" onClick={handleButton5Click}>
             <div>
-              <i class="bi bi-cc-square-fill"></i> <b>Servicing</b>
-            </div>
-
-          </button>
-          <button type="button" class="btn btn-light btn-radius inherit m-2" onClick={handleButton6Click}>
-
-            <div>
-              <i class="bi bi-fan"></i> <b>Marketing</b>
+              <i className="bi bi-cc-square-fill"></i> <b>Servicing</b>
             </div>
 
           </button>
-          <button type="button" class="btn btn-radius btn-success inherit m-2" onClick={handleButton7Click}>
+          <button type="button" className="btn btn-light btn-radius inherit m-2" onClick={handleButton6Click}>
+
             <div>
-              <i class="bi bi-cc-square-fill"></i> <b>Auditing</b>
+              <i className="bi bi-fan"></i> <b>Marketing</b>
             </div>
 
           </button>
-          <button type="button" class="btn btn-radius btn-dark inherit m-2" onClick={handleButton8Click}>
+          <button type="button" className="btn btn-radius btn-success inherit m-2" onClick={handleButton7Click}>
+            <div>
+              <i className="bi bi-cc-square-fill"></i> <b>Auditing</b>
+            </div>
+
+          </button>
+          <button type="button" className="btn btn-radius btn-dark inherit m-2" onClick={handleButton8Click}>
 
             <div>
-              <i class="bi bi-fan"></i> <b>Finance</b>
+              <i className="bi bi-fan"></i> <b>Finance</b>
             </div>
 
           </button>

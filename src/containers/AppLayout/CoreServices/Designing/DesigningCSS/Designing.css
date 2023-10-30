@@ -1,68 +1,99 @@
-.btn-group-width{
-    width: 111px;
-    font-size: 13px;
+.btn-group-width {
+  width: 111px;
+  font-size: 13px;
 }
 
 
-#organization-name{
-    width: 270px !important;
-    height: 45px !important;
+#organization-name {
+  width: 270px !important;
+  height: 45px !important;
 }
 
 .bi-check-circle-fill {
-    color: blue !important;
+  color: blue !important;
 }
 
-.bi-flower1{
-    color:crimson;
+.bi-flower1 {
+  color: crimson;
 }
 
-.label-margin{
-    margin-right:15px !important;
-    
+.label-margin {
+  margin-right: 15px !important;
+
 }
 
-.quotation-heading{
-    color: darkblue;
-}
 
-.customer-name{
-  color:#4831D4!important;
-  background-color: #CCF381 !important;
-}
-
-.delivery-date{
- color:#243665 !important ;
- background-color: #8BD8BD !important;
-}
-
-.compony-name{
- background-color:#F0A07C !important;
- color: #4A274F!important;
-}
 #customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-.GST_total{
-  margin-left: 34rem;
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.quotation {
+  background:rgb(229, 236, 236);
+  border-top: 10px solid rgb(12, 206, 255);
+  border-bottom: 3px solid rgb(12, 206, 255);
+  /* border-left: 2px solid rgb(12, 206, 255);
+  border-right: 2px solid rgb(12, 206, 255); */
+}
+
+.quotation-compony-name {
+  color: darkmagenta;
+  text-align: center;
+  border-bottom: 1px solid rebeccapurple;
+}
+
+.quote-to{
+  padding-left:7px;
+  color: slategray;
+}
+
+.to-quote{
+  padding-left:10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+  background: rgb(12, 206, 255);
+}
+
+td, th {
+  border: 1px solid rgb(12, 206, 255);
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+
+
+.card-subtitle{
+  color: navy !important;
 }

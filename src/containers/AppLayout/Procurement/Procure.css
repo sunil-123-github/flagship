@@ -1,0 +1,236 @@
+.pr {
+   text-align: center;
+   color: purple;
+}
+
+/* CSS for styling the sections */
+.section {
+   width: calc(27.33% - 10px);
+   /* Set each section to 33.33% width with some spacing */
+   height: 25px;
+   background-color: #c2fbd7;
+   border: 1px solid #ccc;
+   display: inline-block;
+   /* Display sections in a line */
+   text-align: center;
+   /* Center text horizontally */
+   line-height: 100px;
+   /* Center text vertically */
+}
+
+.content {
+   border: 2px solid goldenrod;
+   margin-bottom: 25px;
+}
+
+.bi-bookmark-check {
+   color: crimson;
+}
+
+.bi-browser-edge {
+   color: #2bc3d3;
+}
+
+.bi-people-fill {
+   color: coral;
+}
+
+.bi-gear-fill {
+   color: #DAA520;
+}
+
+
+table,
+th,
+td {
+   border: 1px solid white;
+   border-collapse: collapse;
+   text-align: center;
+}
+
+
+
+.heading {
+   font-size: 21px;
+   color:white;
+}
+
+.o-list {
+   color:white;
+}
+
+.inner {
+   border: 1px solid gray;
+   border-radius: 5px;
+   background: white;
+   padding-left: 2rem;
+}
+
+
+
+.dismiss {
+   margin-left: 25px;
+   margin-bottom: 9px;
+}
+
+.add {
+   margin-bottom: 9px;
+}
+
+.get-operator {
+   width: 308px;
+   height: 46px;
+}
+
+.list {
+   list-style-type: none;
+}
+
+.parent {
+   /* Ensure that the parent div does not break to a new line */
+   white-space: nowrap;
+}
+
+.child {
+   /* Make child divs display inline-block, so they appear on the same line */
+   display: inline-block;
+   border: 2px solid skyblue;
+}
+
+.supplier {
+   border: 2px solid slateblue;
+   border-radius: 11px;
+
+}
+
+.sup-head {
+   background: #25118d;
+   color: white;
+}
+
+.purchase {
+   background: #227b76 !important;
+}
+
+.dispatch {
+   background: seagreen;
+}
+
+.Dispatch {
+   background: darkgreen;
+   color: white;
+}
+
+.bg {
+   background: teal;
+   color: white;
+   padding-left: 18px;
+}
+
+.left-margin {
+   margin-left: 5px !important;
+}
+
+
+.circular-image {
+   width: 140px;
+   /* Set the desired width of the circular image */
+   height: 100px;
+   /* Set the desired height of the circular image */
+   /* border-radius: 50%; Make the element circular */
+   border: 1px solid gray;
+   overflow: hidden;
+   /* Hide the parts of the image that exceed the circular shape */
+}
+
+.brdr {
+   border: 1px solid;
+   text-align: center;
+}
+
+.crimson {
+   color: crimson;
+}
+
+.label {
+   color: darkviolet !important;
+}
+
+.purchase {
+   margin: auto;
+   display: flex;
+   justify-content: center;
+}
+
+.bg {
+   background:#8BD8BD;
+   color: #243665;
+}
+
+.Card {
+   width: 179px;
+   height: 144px;
+   background: #3C1A5B;
+   color:#FFF748;
+   text-align: center;
+   padding-top: 24px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.box{
+   border: 1px solid gray;
+  
+}
+.materials{
+   background: #292826;
+   color: #F9D342 !important;
+   margin-top: auto;
+   padding: 25px;
+   height: 93px;
+   font-weight: bold;
+} 
+
+.team-making{
+   border: 1px solid gray;
+   padding: 20px;
+   /* background: #F4A896; */
+   background: #358595;
+}
+
+.lable{
+   font-size: 19px;
+  
+}
+
+.usercity{
+   color: #2F3C7E;
+   font-weight: bold;
+}
+
+.username{
+   color: #F96167;
+   font-weight: bold;
+}
+
+.d-card{
+   background:#D2302C;
+   color:#F7F7F9;
+}
+
+.teamlead{
+   background:#FDF2F8;
+   color:#DB2777;
+}
+
+.operators{
+   background:#FDF2F8;
+   color:#DB2777;
+}
+
+.operators{
+   border: 2px solid;
+   text-align: center;
+   background: crimson;
+   color: white;
+   border-radius: 16px;
+}

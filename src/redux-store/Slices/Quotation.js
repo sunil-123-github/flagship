@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const CustomerQuotation = createSlice({
-    name : "Quotation",
-    initialState: {
-      userData: null,
+  name: "Quotation",
+  initialState: [],
+  reducers: {
+    setUserData: (state, action) => {
+      state.push(action.payload);
     },
-    reducers:{     
-        setUserData: (state, action) => {
-          state.Data = action.payload;    
-        },        
-    }
+
+  }
 })
 
 export { CustomerQuotation };
-export const {setUserData} = CustomerQuotation.actions;
-export const selectUserData = (state) => state.Quotation.Data;
+export const { setUserData } = CustomerQuotation.actions;
+
+

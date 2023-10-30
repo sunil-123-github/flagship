@@ -1,0 +1,155 @@
+.production-heading {
+    color: blueviolet;
+}
+
+.btn-primary {
+    width: 192px !important;
+    height: 43px !important;
+    background: rgb(108, 1, 134);
+    color: white;
+    font-weight: bold;
+}
+
+.order-list {
+    list-style-type: none;
+}
+
+.order-card {
+    background: beige;
+    border-radius: 5px;
+}
+
+.empty-card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.Operator {
+    background: darkslategrey;
+    color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    ;
+    border-radius: 4px;
+    list-style-type: none;
+}
+
+.distribution {
+    color: blueviolet;
+}
+
+.work-distribution {
+
+    border-radius: 8px;
+    padding: 20px;
+    background-color: beige;
+    margin-bottom: 1rem;
+}
+
+.component {
+    font-weight: bold;
+    color: orangered;
+}
+
+.list {
+    background: rgb(50, 0, 115);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 7px;
+
+}
+
+.operator {
+    color: crimson;
+    font-weight: bold;
+    background-color: antiquewhite;
+    text-align: center;
+    margin-top: 16px
+}
+
+.as-op {
+    color: darkblue;
+}
+
+.production {
+    color: rgb(34 197 94);
+}
+
+.cw-mfg {
+    margin-bottom: 15px;
+    border: 2px solid darkblue;
+    color: white;
+    border-radius: 6px;
+}
+
+.head {
+    text-align: center;
+    font-weight: bold;
+    background: black;
+    color: yellow;
+}
+
+.input-box {
+    width: 40px;
+    height: 38px;
+}
+
+.casting-heading {
+    color: white;
+    margin-top: 6px;
+    text-align: center
+}
+
+.casting {
+    background:deeppink;
+    padding: 10px;
+    border-radius: 45px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.fabrication {
+    background: cornflowerblue;
+    padding: 10px;
+    border-radius: 45px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.machining {
+    background: chocolate;
+    padding: 10px;
+    border-radius: 45px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.qc {
+    background:crimson;
+    padding: 15px;
+    border-radius: 45px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+}
+
+.cw-row {
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.input-range{
+    margin-top: 14px;
+}
+
+.p-report{
+    color: blueviolet;
+}
+
+#production-report th{
+    background:darkblue !important;
+    color: white;
+}
+
+.submitALL{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+}

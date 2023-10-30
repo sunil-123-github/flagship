@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import './DesigningCSS/Designing.css'
 import { useDispatch } from 'react-redux';
 import { setUserData } from './../../../../redux-store/Slices/Quotation'
+import { Quotation } from './Quotation';
+import { Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { Link} from 'react-router-dom';
+import { BallBearing } from '../../../../redux-store/Slices/Components/BallBearing';
+import { ChainWheel } from '../../../../redux-store/Slices/Components/ChainWheel';
+import { Hydraulics } from '../../../../redux-store/Slices/Components/Hydraulics';
+import { LinearBearing} from '../../../../redux-store/Slices/Components/LinearBearing';
+import { COupling, Coupling } from '../../../../redux-store/Slices/Components/Coupling';
+import { MagnetMotor } from '../../../../redux-store/Slices/Components/MagnetMotor';
+import { ScrewJack } from '../../../../redux-store/Slices/Components/ScrewJack';
+import { CLutch } from '../../../../redux-store/Slices/Components/Clutch';
 
 export const QuotationForm = () => {
+
+    // Use Navigate Hook
+    const navigate = useNavigate();
+
     // User Details Form
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
@@ -16,7 +29,7 @@ export const QuotationForm = () => {
     const [Month, setMonth] = useState('');
     const [Year, setYear] = useState('');
 
-    // Chain Wheel
+    // // Chain Wheel
     const [isChecked, setIsChecked] = useState(false);
     const [numberValue, setNumberValue] = useState(0);
     const handleCheckboxChange = () => {
@@ -27,7 +40,8 @@ export const QuotationForm = () => {
         return setNumberValue(event.target.value);
     };
 
-    // Ball Bearing
+  
+    // // Ball Bearing
     const [isBBChecked, setBB] = useState(false);
     const [BBNumber, setBBNumber] = useState(0);
     const handleBBCheckbox = () => {
@@ -37,7 +51,7 @@ export const QuotationForm = () => {
     const handleBBNumber = (event) => {
         setBBNumber(event.target.value);
     };
-    //  Hydraulics
+    // //  Hydraulics
     const [isHydChecked, setHyd] = useState(false);
     const [HydNumber, setHydNumber] = useState(0);
     const handleHydBox = () => {
@@ -47,7 +61,7 @@ export const QuotationForm = () => {
     const handleHydNumber = (event) => {
         setHydNumber(event.target.value);
     }
-    //Screw Jack
+    // //Screw Jack
     const [isSJChecked, setSJ] = useState(false);
     const [SJNumber, setSJNumber] = useState(0);
     const handleSJBox = () => {
@@ -57,7 +71,7 @@ export const QuotationForm = () => {
     const handleSJNumber = (event) => {
         setSJNumber(event.target.value)
     }
-    // Linear Bearing
+    // // Linear Bearing
     const [isLBChecked, setLB] = useState(false);
     const [LBNumber, setLBNumber] = useState(0);
     const handleLBBox = () => {
@@ -67,7 +81,7 @@ export const QuotationForm = () => {
     const handleLBNumber = (event) => {
         setLBNumber(event.target.value);
     }
-    //Magnet Motor
+    // //Magnet Motor
     const [isMMChecked, setMM] = useState(false);
     const [MMNumber, setMMNumber] = useState(0);
     const handleMMBox = () => {
@@ -77,7 +91,7 @@ export const QuotationForm = () => {
     const handleMMNumber = (event) => {
         setMMNumber(event.target.value);
     };
-    //Coupling
+    // //Coupling
     const [isCouplingChecked, setCoup] = useState(false);
     const [CoupNumber, setCoupNumber] = useState(0);
     const handleCoupBox = () => {
@@ -87,7 +101,7 @@ export const QuotationForm = () => {
     const handleCoupNumber = (event) => {
         setCoupNumber(event.target.value);
     }
-    //Clutch
+    // //Clutch
     const [isCltChecked, setClt] = useState(false);
     const [CltNumber, setCltNumber] = useState(0);
     const handleCltBox = () => {
@@ -101,43 +115,83 @@ export const QuotationForm = () => {
     const CWState = isChecked;
     const CWValue = numberValue;
 
+
+    let cw = "Chain Wheel", bb = "Ball Bearing", hyd = "Hydraulics", sj = "Screw Jack", lb = "Linear Bearing",
+        mm = "Magnet Motor", coup = "Coupling", clt = "Clutch";
+    let cwprice = CWValue * 123, cwGST = (cwprice * 0.18) + cwprice, cGST = Math.floor(cwGST);
+    let bbprice = BBNumber * 373, bGST = (bbprice * 0.19) + bbprice, bbGST = Math.floor(bGST);
+    let hydprice = HydNumber * 1763, hGST = (hydprice * 0.18) + hydprice, hyGST = Math.floor(hGST);
+    let sjprice = SJNumber * 2312, sjgst = (sjprice * 0.18) + sjprice, sjGST = Math.floor(sjgst);
+    let lbprice = LBNumber * 1109, lbgst = (lbprice * 0.18) + lbprice, lbGST = Math.floor(lbgst);
+    let mmprice = MMNumber * 1643, mmgst = (mmprice * 0.19) + mmprice, mmGST = Math.floor(mmgst);
+    let coupprice = CoupNumber * 432, coupgst = (coupprice * 0.18) + coupprice, coupGST = Math.floor(coupgst);
+    let cltprice = CltNumber * 2173, cltgst = (cltprice * 0.18) + cltprice, cltGST = Math.floor(cltgst);
+
+    var Component = [
+        [cw, CWValue, CWState, cwprice, cGST],
+        [bb, BBNumber, isBBChecked, bbprice, bbGST],
+        [hyd, HydNumber, isHydChecked, hydprice, hyGST],
+        [sj, SJNumber, isSJChecked, sjprice, sjGST],
+        [lb, LBNumber, isLBChecked, lbprice, lbGST],
+        [mm, MMNumber, isMMChecked, mmprice, mmGST],
+        [coup, CoupNumber, isCouplingChecked, coupprice, coupGST],
+        [clt, CltNumber, isCltChecked, cltprice, cltGST]
+    ];
+
+    var component = Component.filter(item => item[2] === true);
+    var total = 0;
+    for (var i = 0; i < Component.length; i++) {
+        total += Component[i][4];
+    }
+
+    let components = {
+        chain_wheel : CWValue,
+        ball_bearing : BBNumber,
+        hydraulics : HydNumber,
+        screw_Jack : SJNumber,
+        clutch : CltNumber,
+        coupling : CoupNumber,
+        linearbearing : LBNumber,
+        magnetmotor : MMNumber,
+    }
+
+    const dis = useDispatch();
+   
+   
+   
     const Data = {
         Name: userName,
         Email: email,
         FullName: fullName,
         ContactNumber: ContactNum,
+        Components: component,
         DDate: Date,
         DMonth: Month,
         DYear: Year,
-        Components: {
-            CW: CWState,
-            CWC: CWValue,
-            BB: isBBChecked,
-            BBC: BBNumber,
-            HYD: isHydChecked,
-            HYDC: HydNumber,
-            SJ: isSJChecked,
-            SJC: SJNumber,
-            LB: isLBChecked,
-            LBC: LBNumber,
-            MM: isMMChecked,
-            MMC: MMNumber,
-            COP: isCouplingChecked,
-            COPC: CoupNumber,
-            CLT: isCltChecked,
-            CLTC: CltNumber,
-        },
+        Total: total,
     };
 
-    // Dispatch the User Entered data to Redux Store
+    const [sent, setSend] = useState(true);
     const dispatch = useDispatch();
-    dispatch(setUserData(Data));
 
-    
+    function Click() {
+        navigate('/coreservices/quotation');
+        setSend(false)
+        dispatch(setUserData(Data));
+        dis(BallBearing(components.ball_bearing));
+        dis(ChainWheel(components.chain_wheel));
+        dis(CLutch(components.clutch));
+        dis(Hydraulics(components.hydraulics));
+        dis(MagnetMotor(components.magnetmotor))
+        dis(COupling(components.coupling));
+        dis(ScrewJack(components.screw_Jack));
+        dis(LinearBearing(components.linearbearing));
 
+    }
 
     return (
         <div >
+            <Outlet />
             <div className='mt-4'>
                 <h5><b>Initiate Enquiry for Quotation</b></h5>
                 <hr />
@@ -169,23 +223,23 @@ export const QuotationForm = () => {
                         <div className="row mt-4">
                             <div className="col">
                                 <input type="text" placeholder='Name Of Compony' id='organization-name'
-                                    onChange={(e) => setUserName(e.target.value)} />
+                                    onBlur={(e) => setUserName(e.target.value)} required />
                             </div>
                             <div className="col">
                                 <input type="text" placeholder='Email Address' id='organization-name'
-                                    onChange={(e) => setEmail(e.target.value)} />
+                                    onBlur={(e) => setEmail(e.target.value)} required />
 
                             </div>
                         </div>
                         <div className="row mt-4">
                             <div className="col">
                                 <input type="text" placeholder='Full Name' id='organization-name'
-                                    onChange={(e) => setFullName(e.target.value)} />
+                                    onBlur={(e) => setFullName(e.target.value)}  required/>
 
                             </div>
                             <div className="col">
                                 <input type="text" placeholder='Contact Number' id='organization-name'
-                                    onChange={(e) => setContactNumber(e.target.value)} />
+                                    onBlur={(e) => setContactNumber(e.target.value)} required />
                             </div>
                         </div>
                     </div>
@@ -204,6 +258,7 @@ export const QuotationForm = () => {
                                         type="checkbox"
                                         checked={isChecked}
                                         onChange={handleCheckboxChange}
+
                                     />
                                     <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Chain Wheel
@@ -234,7 +289,7 @@ export const QuotationForm = () => {
                                         checked={isBBChecked}
                                         onChange={handleBBCheckbox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Ball Bearing
                                     </label>
                                 </div>
@@ -255,13 +310,13 @@ export const QuotationForm = () => {
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check" >
+                                <div className="form-check" >
                                     <input
                                         type="checkbox"
                                         checked={isHydChecked}
                                         onChange={handleHydBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Hydraulics
                                     </label>
                                 </div>
@@ -283,13 +338,13 @@ export const QuotationForm = () => {
 
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
                                         type="checkbox"
                                         checked={isSJChecked}
                                         onChange={handleSJBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Screw Jack
                                     </label>
                                 </div>
@@ -312,13 +367,13 @@ export const QuotationForm = () => {
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check" >
+                                <div className="form-check" >
                                     <input
                                         type="checkbox"
                                         checked={isLBChecked}
                                         onChange={handleLBBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Linear Bearing
                                     </label>
                                 </div>
@@ -341,13 +396,13 @@ export const QuotationForm = () => {
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check" >
+                                <div className="form-check" >
                                     <input
                                         type="checkbox"
                                         checked={isMMChecked}
                                         onChange={handleMMBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Magnet Motor
                                     </label>
                                 </div>
@@ -369,13 +424,13 @@ export const QuotationForm = () => {
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
                                         type="checkbox"
                                         checked={isCouplingChecked}
                                         onChange={handleCoupBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Coupling
                                     </label>
                                 </div>
@@ -398,13 +453,13 @@ export const QuotationForm = () => {
                         </div>
                         <div className="row mt-3">
                             <div className="col">
-                                <div class="form-check" >
+                                <div className="form-check" >
                                     <input
                                         type="checkbox"
                                         checked={isCltChecked}
                                         onChange={handleCltBox}
                                     />
-                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <label className="form-check-label" for="flexCheckChecked">
                                         &nbsp;Clutch
                                     </label>
                                 </div>
@@ -437,8 +492,8 @@ export const QuotationForm = () => {
                         <div className="row mt-4">
                             <div className="col">
                                 <h6>Select Date</h6>
-                                <select class="form-select" aria-label="Default select example"
-                                    onChange={(e) => setDate(e.target.value)}>
+                                <select className="form-select" aria-label="Default select example"
+                                    onChange={(e) => setDate(e.target.value)} required>
                                     <option selected>Date</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -475,8 +530,8 @@ export const QuotationForm = () => {
                             </div>
                             <div className="col">
                                 <h6>Select Month</h6>
-                                <select class="form-select" aria-label="Default select example"
-                                    onChange={(e) => setMonth(e.target.value)}>
+                                <select className="form-select" aria-label="Default select example"
+                                    onChange={(e) => setMonth(e.target.value)} required>
                                     <option selected>Month</option>
                                     <option value="January">January</option>
                                     <option value="February">February</option>
@@ -494,25 +549,28 @@ export const QuotationForm = () => {
                             </div>
                             <div className="col">
                                 <h6>Select Year</h6>
-                                <select class="form-select" aria-label="Default select example"
-                                    onChange={(e) => setYear(e.target.value)}>
+                                <select className="form-select" aria-label="Default select example"
+                                    onChange={(e) => setYear(e.target.value)} required>
                                     <option selected>Year</option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
                                     <option value="2025">2025</option>
                                     <option value="2026">2026</option>
                                     <option value="2027">2027</option>
-
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-               
-          
-              
+                <br />
+                <hr />
+                <div className="row mt-5 mb-3">
+                    <div className="col d-flex ">
+                        <button type="submit" id='submit-btn' className="btn m-auto btn-warning"
+                            onClick={Click}><b>Get a Quotation</b></button>
+                    </div>
+                </div>
             </div>
-
         </div>
     )
 }

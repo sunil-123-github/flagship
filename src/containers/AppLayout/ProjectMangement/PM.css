@@ -1,0 +1,39 @@
+.h5 {
+    color:darkblue;
+}
+
+.bi-bar-chart-fill {
+    color: brown;
+}
+
+
+.pc{
+    margin-left: 10px;
+}
+
+.pp{
+    margin-left: 28px;
+}
+
+.pm{
+    margin-top: 4rem;
+}
+
+.card-header{
+    color: deeppink;
+}
+
+.text-danger{
+    color:green !important;
+}
+
+.pd{
+    background: chocolate;
+    color: white;
+    width: 50%;
+    border-radius: 9px;
+    padding: 15px;
+    margin-bottom: 21px;
+    text-align: center;
+    margin: auto;
+}

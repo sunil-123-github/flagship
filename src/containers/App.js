@@ -6,29 +6,62 @@ import { Procurement } from "./AppLayout/Procurement/Procurement";
 import { CoreServices } from "./AppLayout/CoreServices/CoreServices";
 import { Production } from "../containers/AppLayout/Production/Production";
 import { ProjectMangement } from "./AppLayout/ProjectMangement/ProjectMangement";
-import { Sales } from "./AppLayout/Sales/Sales";
 import { Desiging } from "./AppLayout/CoreServices/Designing/Desiging";
-import {Installing} from "./AppLayout/CoreServices/Installing/Installing";
-import {Maintenance} from "./AppLayout/CoreServices/Maintenance/Maintenance";
-import {Mfg} from "./AppLayout/CoreServices/Manufacturing/Mfg";
+import { Track_Order } from "./AppLayout/CoreServices/Track_Order/Track_Order";
+import { Orders } from "./AppLayout/CoreServices/Orders/Orders";
+import { Choose_suppliers } from './AppLayout/Procurement/Choose_suppliers';
+import { Purchase } from './AppLayout/Procurement/Purchase';
+import { P3 } from './AppLayout/Procurement/P3';
 import { Quotation } from './AppLayout/CoreServices/Designing/Quotation';
+import { TaskDistribution } from './AppLayout/Production/TaskDistribution';
+import { Documentation } from './AppNavigation/Documentation'
+import { Manufacture } from './AppLayout/Production/Manufacture';
+import { ProductionReport } from './AppLayout/Production/ProductionReport';
+import Payment from './AppLayout/ProjectMangement/Payment';
+import Performance from './AppLayout/ProjectMangement/Performance';
 
-function App() {  
+
+function App() {
   return (
-   <div>                                                                                                        
-       <Routes>
+    <div>
+      <Routes>
+        {/* Route For LandingPage */}
         <Route path="/" element={<LandingPage />} />
+
+        {/* Routes For CoreServices Section */}
         <Route path="/coreservices/" element={<CoreServices />} >
-          <Route path="get-quotation" element={<Desiging/>} ></Route>
-          <Route path="installing" element={<Installing/>} />
-          <Route path="maintenance" element={<Maintenance/>} />
-          <Route path="manufacturing" element={<Mfg/>} />        
+          <Route path="get-quotation" element={<Desiging />} />
+          <Route path="quotation" element={<Quotation />} />
+          <Route path="track-your-order" element={<Track_Order />} />
+          <Route path="your-orders" element={<Orders />} />
         </Route>
-        <Route path="/Procurement" element={<Procurement />}></Route>
-        <Route path="/Production" element={<Production />}></Route>
-        <Route path="/ProjectMangement" element={<ProjectMangement />}></Route>
-        <Route path="/Sales" element={<Sales />}></Route>
-      </Routes>   
+
+        {/* Routes For Procurement Section */}
+        <Route path="/procurement/" element={<Procurement />}>
+          <Route path="purchase-materials" element={<Choose_suppliers />} ></Route>
+          <Route path="workforce" element={<Purchase />}></Route>
+          <Route path="dashboard" element={<P3 />}></Route>
+        </Route>
+
+        {/* Routes For Production Section */}
+        <Route path="/production/" element={<Production />}>
+          <Route path='task-distribution' element={<TaskDistribution />}></Route>
+          <Route path='manufacture' element={<Manufacture />} ></Route>
+          <Route path='production-report' element={<ProductionReport />}></Route>
+        </Route>
+
+        {/* Routes For Project Mangement Section */}
+        <Route path="/projectmangement" element={<ProjectMangement />}>
+        <Route path='payment' element={<Payment />}></Route>
+          <Route path='performance' element={<Performance />}></Route>
+        
+
+        </Route>
+
+        {/* Route For Documentation Section */}
+        <Route path='/flagship-documentation' element={<Documentation />}></Route>
+
+      </Routes>
     </div>
   );
 }

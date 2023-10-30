@@ -4,38 +4,47 @@ import { Outlet, Link } from 'react-router-dom'
 import { List } from 'reactstrap'
 import './../../../components/SideBar/SideBar.css'
 import './../CoreServices/CoreServicesCSS/MainSection.css'
+import { useLocation } from 'react-router-dom'
+import Payment from './Payment'
+import './../ProjectMangement/PM.css';
+
 
 export const ProjectMangement = () => {
-  const NavMenuService = {
-    Desiging: "Designing Component",
-    Manufacturing: "Manufacturing engines",
-    Installation: "Installing Pumps",
-    Maintenance: "Maintenance Of Machinery",
+  const location = useLocation();
+  const value = location.pathname === "/projectmangement";
+
+  function Proc(value) {
+    if (value) {
+      return <Payment/>
+    }
+    else {
+      null
+    }
   }
+
+  const activeLinkStyle = {
+    color: '#007bff',
+  };
+
   return (
     <div>
-      <div className='container-fluid'>
+      <div className='container-fluid fixed-top'>
         <Navigation />
       </div>
-      <div className='container-fluid'>
+      <div className='container-fluid pm'>
         <div className='row'>
-          <div className='col-3 mt-3'>
-            <div className="sidebar p-1">
-              <List type='unstyled' className='Menu'>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Desiging"><i className="bi bi-gear"></i> {NavMenuService.Desiging}</Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Manufacturing"><i className="bi bi-hypnotize"></i> {NavMenuService.Manufacturing}</Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Installing"><i className="bi bi-gear-wide-connected"> </i>{NavMenuService.Installation} </Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Maintenance"><i className="bi bi-file-bar-graph"></i> {NavMenuService.Maintenance}</Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Desiging"><i className="bi bi-gear"></i> {NavMenuService.Desiging}</Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Manufacturing"><i className="bi bi-hypnotize"></i> {NavMenuService.Manufacturing}</Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Installing"><i className="bi bi-gear-wide-connected"> </i>{NavMenuService.Installation} </Link></li>
-                <li className='mt-3'><Link className='NavMenu' to="/ProjectMangement/Maintenance"><i className="bi bi-file-bar-graph"></i> {NavMenuService.Maintenance}</Link></li>
+          <div className='col-2 mt-2'>
+            <div className="sidebar p-1 position-fixed">
+              <List type='unstyled' className='Menu'>             
+                <li className='mt-3'><Link className='NavMenu' to="/projectmangement/performance" style={location.pathname === '/projectmangement/performance' ? activeLinkStyle : {}}><i className="bi bi-bar-chart-fill"></i> Deliver Order</Link></li>
               </List>
             </div>
           </div>
-          <div className='col-8 mt-3 main-section'>
-            <h1 className='text-warning'>Project Manegment Section</h1>
-            <Outlet />
+          <div className='col-8 mt-2 main-section'>
+            <div>{Proc(value)}</div>
+            <div className="features">
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>
